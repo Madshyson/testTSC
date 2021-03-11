@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true, useUnifiedTopology: true});
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
@@ -26,6 +25,7 @@ const user = new Schema({
     salt : String
 });
 
-const db = mongoose.connection;
+const Bill = mongoose.model('Bill', bill);
+const User = mongoose.model('User', user);
 
-module.exports = {bill, user, db};
+module.exports = {Bill, User};
